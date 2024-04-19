@@ -1,8 +1,6 @@
 import {LitElement, html, css} from 'lit';
 import {customElement} from 'lit/decorators.js';
-import './cell';
-
-// Define a context to store the boolean value
+import '../Cell/cell';
 
 @customElement('cc-table')
 export class Table extends LitElement {
@@ -10,10 +8,9 @@ export class Table extends LitElement {
     :host {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      grid-gap: 10px;
+      grid-template-rows: 200px 200px 200px;
       height: 600px;
       width: 600px;
-      box-sizing: border-box;
     }
   `;
 

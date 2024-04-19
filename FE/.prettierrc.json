@@ -3,5 +3,10 @@
   "tabWidth": 2,
   "singleQuote": true,
   "bracketSpacing": false,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "printWidth": 80,
+  "useTabs": false,
+  "semi": true,
+  "insertFinalNewline": true,
+  "noMultipleEmptyLines": true
 }
