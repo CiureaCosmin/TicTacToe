@@ -2,7 +2,7 @@ import {consume} from '@lit/context';
 import {LitElement, html, css} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
 import {userContext} from '../../Contexts/UserContext';
-import {IconEnum} from '../../SVG/IconEnum';
+import {iconMap} from '../../SVG/IconEnum';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import './icon';
 
@@ -46,7 +46,7 @@ export class Cell extends LitElement {
   }
 
   handleClick() {
-    this.value = IconEnum.DEFAULT_X;
+    this.value = iconMap[this.user.symbol];
     this.requestUpdate();
   }
   clearProperties() {

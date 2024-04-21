@@ -42,7 +42,8 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@lit/context": "^1.1.1",
-    "lit": "^3.0.0"
+    "lit": "^3.0.0",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
@@ -51,6 +52,7 @@
     "@open-wc/testing": "^3.1.5",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-replace": "^5.0.2",
+    "@types/uuid": "^9.0.8",
     "@typescript-eslint/eslint-plugin": "^5.25.0",
     "@typescript-eslint/parser": "^5.25.0",
     "@web/dev-server": "^0.1.31",

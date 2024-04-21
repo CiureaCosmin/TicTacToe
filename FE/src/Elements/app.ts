@@ -3,6 +3,7 @@ import {customElement} from 'lit/decorators.js';
 import './Table/table';
 import {userContext} from '../Contexts/UserContext';
 import {provide} from '@lit/context';
+import {User} from '../Contexts/IUserInterface';
 
 @customElement('cc-main')
 export class Main extends LitElement {
@@ -18,14 +19,15 @@ export class Main extends LitElement {
     }
   `;
   @provide({context: userContext})
-  user = {name: 'John Doe', symbol: 'X'};
+  user = new User();
   override render() {
+    console.log(this.user);
     return html`
       <cc-table></cc-table>
       <button @click=${this.clearTable}>Clear</button>
     `;
   }
-  clearTable() {
+  async clearTable() {
     window.dispatchEvent(new CustomEvent('clear-cell'));
   }
 }
