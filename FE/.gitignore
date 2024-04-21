@@ -2,7 +2,3 @@
 /lib/
 /test/
 custom-elements.json
-# top level source
-/dist
-# only generated for size check
-my-element.bundled.js
