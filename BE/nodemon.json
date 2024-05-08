@@ -1,0 +1,17 @@
+{
+  "restartable": "rs",
+  "ignore": [".git", "node_modules/**/node_modules"],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "events": {
+    "restart": "for /f \"tokens=5\" %a in ('netstat -aon ^| findstr :5000') do taskkill /F /PID %a"
+  },
+  "watch": ["src/"],
+  "env": {
+    "NODE_ENV": "development",
+    "NODE_PATH": ".."
+  },
+  "ext": "ts"
+}

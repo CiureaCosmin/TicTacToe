@@ -1,4 +1,4 @@
 import {createContext} from '@lit/context';
-import {User} from './IUserInterface';
+import {User} from './UserManager';
 
 export const userContext = createContext<User>('userContext');
