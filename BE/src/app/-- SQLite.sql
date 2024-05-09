@@ -1,2 +1,2 @@
 -- SQLite
-SELECT * FROM sessions WHERE gameId = 'a4c54801-801a-47fd-abda-4a5c75a91f2c';
+SELECT * FROM sessions WHERE gameId = 'ad0a22d8-9c18-4968-bd03-cb830865bd85';

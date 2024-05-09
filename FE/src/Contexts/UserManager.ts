@@ -84,11 +84,5 @@ export class User implements IUserInterface {
         }
       }
     );
-    socket.on('playerMoved', (row: number, col: number) => {
-      console.log(`Player moved to row: ${row}, col: ${col}`);
-    });
-  }
-  playerMove(row: number, col: number) {
-    socket.emit('playerMove', this.gameId, this.username, row, col);
   }
 }

@@ -5,8 +5,6 @@ import { open } from "sqlite";
 import {
   ClientToServerEvents,
   ServerToClientEvents,
-  InterServerEvents,
-  SocketData,
   SessionStartResponse,
 } from "../../../Common/WebSocketEvents";
 
@@ -39,7 +37,7 @@ export class Websocket {
             symbol,
           };
           callback(response);
-          if (await this.checkIfGameExists(gameId)) {
+          if (!(await this.checkIfGameExists(gameId))) {
             this.db.run(
               "INSERT INTO sessions (gameId, user1, symbol1) VALUES (?, ?, ?)",
               [gameId, username, symbol]
@@ -53,9 +51,8 @@ export class Websocket {
         }
       );
       socket.on("playerMove", (gameId, username, row, col) => {
-        console.log(
-          `gameId: ${gameId}, username: ${username}, row: ${row}, col: ${col}`
-        );
+        console.log("playerMove", gameId, username, row, col);
+        io.emit("playerMoved", gameId, username, row, col);
       });
     });
     return server;
@@ -84,7 +81,6 @@ export class Websocket {
         "SELECT * FROM sessions WHERE gameId = ?",
         [gameId]
       );
-      console.log(result);
       return result;
     } catch (error) {
       console.error("Error checking if game exists:", error);

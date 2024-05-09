@@ -57,6 +57,7 @@ export class Cell extends LitElement {
     }
     this.value = iconMap[this.user.symbol];
     this.requestUpdate();
+    console.log('playerMove', this.user.gameId, this.user.username, 2, 2);
     socket.emit('playerMove', this.user.gameId, this.user.username, 2, 2);
   }
   clearProperties() {

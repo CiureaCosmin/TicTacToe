@@ -1,5 +1,10 @@
 interface ServerToClientEvents {
-  playerMoved: (row: number, col: number) => void;
+  playerMoved: (
+    gameId: string,
+    username: string,
+    row: number,
+    col: number
+  ) => void;
 }
 
 interface ClientToServerEvents {
@@ -16,22 +21,8 @@ interface ClientToServerEvents {
   ) => void;
 }
 
-interface InterServerEvents {
-  ping: () => void;
-}
-
-interface SocketData {
-  name: string;
-  age: number;
-}
 interface SessionStartResponse {
   success: boolean;
   symbol: string;
 }
-export {
-  ServerToClientEvents,
-  ClientToServerEvents,
-  InterServerEvents,
-  SocketData,
-  SessionStartResponse,
-};
+export { ServerToClientEvents, ClientToServerEvents, SessionStartResponse };
